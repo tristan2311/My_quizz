@@ -8,7 +8,7 @@
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/question"
+        android:id="@+id/in_game_activity_textview_question"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -23,15 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Question" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id ="@+id/total_question"
-        android:text="Questions "
-        android:layout_centerHorizontal="true"/>
-
+        tools:text="Question" />
 
     <Button
         android:id="@+id/in_game_activity_button_1"
@@ -47,8 +39,8 @@
         app:layout_constraintBottom_toTopOf="@+id/in_game_activity_button_3"
         app:layout_constraintEnd_toStartOf="@+id/in_game_activity_button_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/question"
-        android:text="Answer1" />
+        app:layout_constraintTop_toBottomOf="@+id/in_game_activity_textview_question"
+        tools:text="Answer1" />
 
     <Button
         android:id="@+id/in_game_activity_button_2"
@@ -64,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/in_game_activity_button_1"
         app:layout_constraintTop_toTopOf="@+id/in_game_activity_button_1"
-        android:text="Answer2" />
+        tools:text="Answer2" />
 
     <Button
         android:id="@+id/in_game_activity_button_3"
@@ -81,7 +73,7 @@
         app:layout_constraintEnd_toStartOf="@+id/in_game_activity_button_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/in_game_activity_button_1"
-        android:text="Answer3" />
+        tools:text="Answer3" />
 
     <Button
         android:id="@+id/in_game_activity_button_4"
@@ -97,5 +89,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/in_game_activity_button_3"
         app:layout_constraintTop_toTopOf="@+id/in_game_activity_button_3"
-        android:text="Answer4" />
+        tools:text="Answer4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

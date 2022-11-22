@@ -2,18 +2,18 @@ package com.example.my_quizz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mUpperTextView;
-    private EditText mNameEditText;
-    private Button mStartButton;
+    EditText mNameEditText;
+    Button mStartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +26,27 @@ public class MainActivity extends AppCompatActivity {
 
         mNameEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+            public void beforeTextChanged(CharSequence charsequence, int start, int count, int after) {
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+            public void onTextChanged(CharSequence charsequence, int start, int before, int count) {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-                mStartButton.setEnabled(!s.toString().isEmpty()); //détecte si il y a au moins une lettre de rentrée
+            public void afterTextChanged(Editable editable) {
+                mStartButton.setEnabled(!editable.toString().isEmpty()); //active le bouton start
             }
         });
+
+        mStartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {        // The user just clicked
+                Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(gameActivityIntent);
+            }
+        });
+
+
     }
 }

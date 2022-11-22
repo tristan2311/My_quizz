@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Question" />
+        android:text="Question" />
 
     <Button
         android:id="@+id/in_game_activity_button_1"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toStartOf="@+id/in_game_activity_button_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/in_game_activity_textview_question"
-        tools:text="Answer1" />
+        android:text="Answer1" />
 
     <Button
         android:id="@+id/in_game_activity_button_2"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/in_game_activity_button_1"
         app:layout_constraintTop_toTopOf="@+id/in_game_activity_button_1"
-        tools:text="Answer2" />
+        android:text="Answer2" />
 
     <Button
         android:id="@+id/in_game_activity_button_3"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toStartOf="@+id/in_game_activity_button_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/in_game_activity_button_1"
-        tools:text="Answer3" />
+        android:text="Answer3" />
 
     <Button
         android:id="@+id/in_game_activity_button_4"
@@ -89,5 +89,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/in_game_activity_button_3"
         app:layout_constraintTop_toTopOf="@+id/in_game_activity_button_3"
-        tools:text="Answer4" />
+        android:text="Answer4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

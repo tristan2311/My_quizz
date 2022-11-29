@@ -2,8 +2,11 @@ package com.example.my_quizz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +21,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     int currentQuestionIndex = 0;
     String selectedAnswer="";
 
+    public void chooseAnswer(Button clickedButton) {
+        if (selectedAnswer.equals(QuestionAnswer.Bonnereponse[currentQuestionIndex])) {
+            clickedButton.setBackgroundColor(Color.parseColor("#90EE90"));
+            score++;}
+        else {clickedButton.setBackgroundColor(Color.parseColor("#FF0000"));}
+        currentQuestionIndex++;
+        loadNewQuestion();
+        clickedButton.setBackgroundResource(android.R.drawable.btn_default);
+    }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,32 +55,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Button clickedButton = (Button) view;
-        if (clickedButton.getId()==R.id.in_game_activity_button_1) {
-            if(selectedAnswer.equals(QuestionAnswer.Bonnereponse[currentQuestionIndex])){
-                score ++;
-            }
-        if (clickedButton.getId()==R.id.in_game_activity_button_2)
-            if(selectedAnswer.equals(QuestionAnswer.Bonnereponse[currentQuestionIndex])) {
-                score++;
-            }
-        if(clickedButton.getId()==R.id.in_game_activity_button_3){
-            if (selectedAnswer.equals(QuestionAnswer.Bonnereponse[currentQuestionIndex])){
-                score++;
-            }
-        if(clickedButton.getId()==R.id.in_game_activity_button_4){
-            if(selectedAnswer.equals(QuestionAnswer.Bonnereponse[currentQuestionIndex])){
-                score++;
-            }
+        selectedAnswer = clickedButton.getText().toString();
+        switch(clickedButton.getId()) {
+            case R.id.in_game_activity_button_1:
+            case R.id.in_game_activity_button_2:
+            case R.id.in_game_activity_button_3:
+            case R.id.in_game_activity_button_4:
+                chooseAnswer(clickedButton);
+                break;
         }
-            currentQuestionIndex++;
-            loadNewQuestion();
-
-
-        }else{
-            selectedAnswer = clickedButton.getText().toString();
-        }
-
-    }
     }
 
     private void loadNewQuestion() {

@@ -9,7 +9,7 @@ public class QuestionAnswer {
     };
     public static String choix[][] ={
             {"Berlin","Paris","Madrid","Mexico"},
-            {"Paris","Rome","Madrid","Paris"},
+            {"Vienne","Rome","Madrid","Paris"},
             {"Bruxelles","Belgrade","Athènes","Amsterdam"}
 
     };

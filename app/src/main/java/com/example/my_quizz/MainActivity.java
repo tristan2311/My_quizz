@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +48,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        TextView test33;
+        //sharedpreference//
 
+            test33 = findViewById(R.id.textView2);
+            QuestionAnswer.createEuropeAnswer();
+            String test464 = "";
+            int zeta=0;
+            while (zeta<6){
+                for (String Questiontest : QuestionAnswer.EuropeAnswer.keySet()){
+//                  test33.setText(QuestionAnswer.EuropeAnswer.toString());
+                    test464 = test464 + Questiontest.toString();
+                    zeta += 1;
+                    }
+            }
+            test33.setText(test464);
     }
 }

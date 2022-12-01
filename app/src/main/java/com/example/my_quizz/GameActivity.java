@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
     TextView questionTextView;

@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
@@ -21,7 +23,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     Button repA,repB,repC,repD;
 
     int score = 0;
-    int totalQuestion = QuestionAnswer.EuropeAnswer.size();
+    Map<Integer, String[][]> CountryAnswer = ChooseCountry.CountryAnswer;
+    int totalQuestion = CountryAnswer.size();
     int numberQuestion = NumberQuestion.maxQuestion;
     int currentQuestionIndex = 0;
     String selectedAnswer="";
@@ -30,7 +33,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         Collections.shuffle(randomNumberIndexList);}
 
     public void chooseAnswer(Button clickedButton) {
-        if (selectedAnswer.equals(QuestionAnswer.EuropeAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0].toString())) {
+        if (selectedAnswer.equals(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0].toString())) {
             clickedButton.setBackgroundColor(Color.parseColor("#90EE90"));
             score++;}
         else {clickedButton.setBackgroundColor(Color.parseColor("#FF0000"));}
@@ -82,16 +85,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList<Integer> randomNumber = new ArrayList<Integer>();
         for (int i=0; i<4; i++) randomNumber.add(i);
         Collections.shuffle(randomNumber);
-        questionTextView.setText(QuestionAnswer.EuropeAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[0][0].toString());
-        repA.setText(QuestionAnswer.EuropeAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(0)].toString());
-        repB.setText(QuestionAnswer.EuropeAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(1)].toString());
-        repC.setText(QuestionAnswer.EuropeAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(2)].toString());
-        repD.setText(QuestionAnswer.EuropeAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(3)].toString());
+        questionTextView.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[0][0].toString());
+        repA.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(0)].toString());
+        repB.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(1)].toString());
+        repC.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(2)].toString());
+        repD.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(3)].toString());
     }
 
     private void finishQuiz() {
         String passStatus = "";
-        if (score > totalQuestion*0.60) {
+        if (score > numberQuestion*0.60) {
             passStatus = "Passed";
         }else{
             passStatus = "Failed";
@@ -107,8 +110,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void restartQuiz() {
-        Intent numberQuestionIntent = new Intent(GameActivity.this, NumberQuestion.class);
-        startActivity(numberQuestionIntent);
+        Intent ChooseCountryIntent = new Intent(GameActivity.this, ChooseCountry.class);
+        startActivity(ChooseCountryIntent);
 
     }
 }

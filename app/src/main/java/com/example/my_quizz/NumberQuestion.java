@@ -25,8 +25,8 @@ public class NumberQuestion extends AppCompatActivity implements View.OnClickLis
         ButtonAllQ = findViewById(R.id.buttonAllQ);
         Button5Q.setOnClickListener(this);
         Button10Q.setOnClickListener(this);
-        Button10Q.setOnClickListener(this);
-        Button10Q.setOnClickListener(this);
+        Button20Q.setOnClickListener(this);
+        ButtonAllQ.setOnClickListener(this);
 
     }
 
@@ -44,7 +44,7 @@ public class NumberQuestion extends AppCompatActivity implements View.OnClickLis
                 maxQuestion = 20;
                 break;
             case R.id.buttonAllQ:
-                maxQuestion = QuestionAnswer.EuropeAnswer.size();
+                maxQuestion = ChooseCountry.CountryAnswer.size();
                 break;}
         Intent gameActivityIntent = new Intent(NumberQuestion.this, GameActivity.class);
         startActivity(gameActivityIntent);

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         QuestionAnswer.createEuropeAnswer();
+        QuestionAnswer.createAmeriqueAnswer();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mNameEditText = findViewById(R.id.main_challenger_name);
@@ -45,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {        // The user just clicked
-                Intent numberQuestionIntent = new Intent(MainActivity.this, NumberQuestion.class);
-                startActivity(numberQuestionIntent);
+                Intent ChooseCountryIntent = new Intent(MainActivity.this, ChooseCountry.class);
+                startActivity(ChooseCountryIntent);
             }
         });
 

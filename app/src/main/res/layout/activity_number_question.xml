@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button5Q"
+        android:text="5 QUESTIONS"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_totopOf="@+id/button10Q" />
+
+    <Button
+        android:id="@+id/button10Q"
+        android:text="10 QUESTIONS"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5Q" />
+
+    <Button
+        android:id="@+id/button20Q"
+        android:text="20 QUESTIONS"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10Q" />
+
+    <Button
+        android:id="@+id/buttonTotalQ"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        android:text="TOUTES LES QUESTIONS"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button20Q" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

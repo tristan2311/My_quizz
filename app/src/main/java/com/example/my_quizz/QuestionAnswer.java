@@ -51,23 +51,4 @@ public class QuestionAnswer {
         EuropeAnswer.put(41 , new String[][]{{"Quelle est la capitale de l'Irlande?"},             {"Berlin","Dublin","Londres","Glasgow"},          {"Dublin"}});
         EuropeAnswer.put(42 , new String[][]{{"Quelle est la capitale de la Croatie"},             {"Bratislava","Tirana","Belgrade","Zagreb"},      {"Zagreb"}});
     }
-
-    public static String question[] ={
-            "Quelle est la capitale de la France?",
-            "Quelle est la capitale de l'Espagne?",
-            "Quelle est la capitale de la Belgique?"
-
-    };
-    public static String choix[][] ={
-            {"Berlin","Paris","Madrid","Mexico"},
-            {"Vienne","Rome","Madrid","Paris"},
-            {"Bruxelles","Belgrade","Athènes","Amsterdam"}
-
-    };
-    public static String Bonnereponse[] = {
-            "Paris",
-            "Madrid",
-            "Bruxelles"
-
-    };
 }

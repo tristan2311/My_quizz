@@ -26,6 +26,7 @@
                 android:value="" />
         </activity>
         <activity android:name=".GameActivity" />
+        <activity android:name=".NumberQuestion"/>
     </application>
 
 </manifest>

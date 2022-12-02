@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     int score = 0;
     int totalQuestion = QuestionAnswer.EuropeAnswer.size();
+    int numberQuestion = NumberQuestion.maxQuestion;
     int currentQuestionIndex = 0;
     String selectedAnswer="";
     ArrayList<Integer> randomNumberIndexList = new ArrayList<Integer>();
@@ -72,8 +74,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void loadNewQuestion() {
-        totalQuestionsTextView.setText("Questions restantes: "+ String.valueOf(totalQuestion-currentQuestionIndex));
-        if(currentQuestionIndex == totalQuestion){
+        totalQuestionsTextView.setText("Questions restantes: "+ String.valueOf(numberQuestion-currentQuestionIndex));
+        if(currentQuestionIndex == numberQuestion){
             finishQuiz();
             return;
         }
@@ -97,7 +99,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score "+score+" sur "+String.valueOf(totalQuestion))
+                .setMessage("Score "+score+" sur "+String.valueOf(numberQuestion))
                 .setPositiveButton("Recommencer",((dialogInterface, i) -> restartQuiz()))
                 .setCancelable(false)
                 .show();
@@ -105,9 +107,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void restartQuiz() {
-        score=0;
-        currentQuestionIndex=0;
-        loadNewQuestion();
+        Intent numberQuestionIntent = new Intent(GameActivity.this, NumberQuestion.class);
+        startActivity(numberQuestionIntent);
 
     }
 }

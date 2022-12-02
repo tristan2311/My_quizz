@@ -6,13 +6,10 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
@@ -20,12 +17,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     Button repA,repB,repC,repD;
 
     int score = 0;
-    int totalQuestion = QuestionAnswer.question.length;
+    int totalQuestion = QuestionAnswer.EuropeAnswer.size();
     int currentQuestionIndex = 0;
     String selectedAnswer="";
 
     public void chooseAnswer(Button clickedButton) {
-        if (selectedAnswer.equals(QuestionAnswer.Bonnereponse[currentQuestionIndex])) {
+        if (selectedAnswer.equals(QuestionAnswer.EuropeAnswer.get(currentQuestionIndex+1)[2][0].toString())) {
             clickedButton.setBackgroundColor(Color.parseColor("#90EE90"));
             score++;}
         else {clickedButton.setBackgroundColor(Color.parseColor("#FF0000"));}
@@ -52,7 +49,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         repC.setOnClickListener(this);
         repD.setOnClickListener(this);
 
-        totalQuestionsTextView.setText("Total questions : "+totalQuestion);
+        totalQuestionsTextView.setText("Total questions : "+ String.valueOf(totalQuestion));
         loadNewQuestion();
     }
     @Override
@@ -74,11 +71,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             finishQuiz();
             return;
         }
-        questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
-        repA.setText(QuestionAnswer.choix[currentQuestionIndex][0]);
-        repB.setText(QuestionAnswer.choix[currentQuestionIndex][1]);
-        repC.setText(QuestionAnswer.choix[currentQuestionIndex][2]);
-        repD.setText(QuestionAnswer.choix[currentQuestionIndex][3]);
+        questionTextView.setText(QuestionAnswer.EuropeAnswer.get(currentQuestionIndex+1)[0][0].toString());
+        repA.setText(QuestionAnswer.EuropeAnswer.get(currentQuestionIndex+1)[1][0].toString());
+        repB.setText(QuestionAnswer.EuropeAnswer.get(currentQuestionIndex+1)[1][1].toString());
+        repC.setText(QuestionAnswer.EuropeAnswer.get(currentQuestionIndex+1)[1][2].toString());
+        repD.setText(QuestionAnswer.EuropeAnswer.get(currentQuestionIndex+1)[1][3].toString());
     }
 
     private void finishQuiz() {
@@ -91,7 +88,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score"+score+"sur"+totalQuestion)
+                .setMessage("Score "+score+" sur "+String.valueOf(totalQuestion))
                 .setPositiveButton("Recommencer",((dialogInterface, i) -> restartQuiz()))
                 .setCancelable(false)
                 .show();

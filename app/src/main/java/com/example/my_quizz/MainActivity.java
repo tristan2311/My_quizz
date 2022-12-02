@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText mNameEditText;
@@ -18,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        QuestionAnswer.createEuropeAnswer();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mNameEditText = findViewById(R.id.main_challenger_name);
         mStartButton = findViewById(R.id.main_start_button);
         mStartButton.setEnabled(false); //permet de désactiver le bouton
@@ -48,20 +50,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView test33;
-        //sharedpreference//
-
-            test33 = findViewById(R.id.textView2);
-            QuestionAnswer.createEuropeAnswer();
-            String test464 = "";
-            int zeta=0;
-            while (zeta<6){
-                for (String Questiontest : QuestionAnswer.EuropeAnswer.keySet()){
-//                  test33.setText(QuestionAnswer.EuropeAnswer.toString());
-                    test464 = test464 + Questiontest.toString();
-                    zeta += 1;
-                    }
-            }
-            test33.setText(test464);
+//        TextView test33;
+//        //sharedpreference//
+//        test33 = findViewById(R.id.textView2);
+//        QuestionAnswer.createEuropeAnswer();
+//        String test464 = "";
+//        ThreadLocalRandom aléatoire = ThreadLocalRandom.current();
+//        int randomNumber = 0;
+//            for(int i =0; i<6; i++){
+//                randomNumber = aléatoire.nextInt(0,QuestionAnswer.EuropeAnswer.size()+1);
+//                test464 = test464 + randomNumber + QuestionAnswer.EuropeAnswer.get(randomNumber)[2][0].toString();
+//                    }
+//        test33.setText(String.valueOf(QuestionAnswer.EuropeAnswer.size()));
     }
 }

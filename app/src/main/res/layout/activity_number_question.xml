@@ -7,7 +7,7 @@
     <Button
         android:id="@+id/button5Q"
         android:text="5 QUESTIONS"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:layout_marginBottom="50dp"
         android:layout_width="230dp"
         android:layout_height="100dp"
@@ -40,7 +40,7 @@
     <Button
         android:id="@+id/buttonAllQ"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="90dp"
         android:text="TOUTES LES QUESTIONS"
         android:layout_width="230dp"
         android:layout_height="100dp"

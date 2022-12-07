@@ -22,7 +22,7 @@ public class QuestionAnswer {
         EuropeAnswer.put(11 , new String[][]{{"Quelle est la capitale de la République Tchèque?"}, {"Prague","Budapest","Bucarest","Vienne"},        {"Prague"}});
         EuropeAnswer.put(12 , new String[][]{{"Quelle est la capitale de la Pologne?"},            {"Vienne","Varsovie","Madrid","Mexico"},          {"Varsovie"}});
         EuropeAnswer.put(13 , new String[][]{{"Quelle est la capitale de la Hongrie?"},            {"Budapest","Bucarest","Kiev","Sofia"},           {"Budapest"}});
-        EuropeAnswer.put(14 , new String[][]{{"Quelle est la capitale de la Bosnie Herzégovine?"}, {"Sarajevo","Zagreb","Sofia","Tirana"},           {"Zagreb"}});
+        EuropeAnswer.put(14 , new String[][]{{"Quelle est la capitale de la Bosnie Herzégovine?"}, {"Sarajevo","Zagreb","Sofia","Tirana"},           {"Sarajevo"}});
         EuropeAnswer.put(15 , new String[][]{{"Quelle est la capitale de la Slovaquie?"},          {"Bratislava","Zagreb","Ljubljana","Prague"},     {"Bratislava"}});
         EuropeAnswer.put(16 , new String[][]{{"Quelle est la capitale de la Roumanie?"},           {"Bucarest","Budapest","Sofia","Belgrade"},       {"Bucarest"}});
         EuropeAnswer.put(17 , new String[][]{{"Quelle est la capitale de la Moldavie?"},           {"Chisinau","Skopje","Belgrade","Prague"},        {"Chisinau"}});

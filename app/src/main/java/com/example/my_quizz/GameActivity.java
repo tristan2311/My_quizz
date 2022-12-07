@@ -11,10 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -23,6 +21,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     TextView questionTextView;
     Button repA,repB,repC,repD;
 
+    String Answer;
+    String Message;
     int score = 0;
     Map<Integer, String[][]> CountryAnswer = ChooseCountry.CountryAnswer;
     int totalQuestion = CountryAnswer.size();
@@ -36,12 +36,22 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     public void chooseAnswer(Button clickedButton) {
         if (selectedAnswer.equals(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0].toString())) {
             clickedButton.setBackgroundColor(Color.parseColor("#90EE90"));
-            score++;}
-        else {clickedButton.setBackgroundColor(Color.parseColor("#FF0000"));}
+            Answer = "Right";
+            Message = "Tu as trouvé la bonne capitale !";
+            score++;
+        } else {
+            clickedButton.setBackgroundColor(Color.parseColor("#FF0000"));
+            Answer = "Wrong";
+            Message = "Et non la bonne capital est " + String.valueOf(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0]);
+        }
         currentQuestionIndex++;
-        loadNewQuestion();
-        clickedButton.setBackgroundResource(android.R.drawable.btn_default);
-    }
+        new AlertDialog.Builder(this)
+                .setTitle(Answer)
+                .setMessage(Message)
+                .setPositiveButton("Continue", ((dialogInterface, i) -> loadNewQuestion()))
+                .setCancelable(false)
+                .show();
+        }
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -91,7 +101,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         repB.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(1)].toString());
         repC.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(2)].toString());
         repD.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(3)].toString());
-    }
+        repA.setBackgroundColor(Color.parseColor("#8A2BE2"));
+        repB.setBackgroundColor(Color.parseColor("#8A2BE2"));
+        repC.setBackgroundColor(Color.parseColor("#8A2BE2"));
+        repD.setBackgroundColor(Color.parseColor("#8A2BE2"));
+        }
 
     private void finishQuiz() {
         String passStatus = "";

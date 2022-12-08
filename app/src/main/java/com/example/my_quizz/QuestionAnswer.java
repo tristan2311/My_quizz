@@ -7,6 +7,8 @@ public class QuestionAnswer {
 
     public static Map<Integer, String[][]> EuropeAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AmeriqueAnswer = new HashMap<Integer, String[][]>();
+    public static Map<Integer, String[][]> AfriqueAnswer = new HashMap<Integer, String[][]>();
+
 
     public static void createEuropeAnswer(){
         EuropeAnswer.put(1 , new String[][]{{"Quelle est la capitale de la France?"},              {"Berlin","Paris","Madrid","Londres"},            {"Paris"}});
@@ -80,5 +82,29 @@ public class QuestionAnswer {
         AmeriqueAnswer.put(24 , new String[][]{{"Quelle est la capitale du Surimane?"},                 {"Paramaribo","Kourou","Quito","Caracas"},                 {"Paramaribo"}});
         AmeriqueAnswer.put(25 , new String[][]{{"Quelle est la capitale de l'Uruguay?"},                {"Montevideo","Buenos Aires","Tirana","Santiago"},         {"Montevideo"}});
         AmeriqueAnswer.put(26 , new String[][]{{"Quelle est la capitale du Vénézuéla?"},                {"Caracas","Santiago","Bogota","Curaçao"},                 {"Caracas"}});
+    }
+
+
+
+    public static void createAfriqueAnswer(){
+        AfriqueAnswer.put(1 , new String[][]{{"Quelle est la capitale de l'Afrique du sud?"},                   {"Johannesburg","Windhoek","Gaborone","Maputo"},           {"Johannesburg"}});
+        AfriqueAnswer.put(2 , new String[][]{{"Quelle est la capitale de l'Algérie?"},                          {"Alger","Oran","Tanger","Rabat"},                         {"Alger"}});
+        AfriqueAnswer.put(3 , new String[][]{{"Quelle est la capitale de l'Angola?"},                           {"Luanda","Benguela","Kinshasa","Windhoek"},               {"Luanda"}});
+        AfriqueAnswer.put(4 , new String[][]{{"Quelle est la capitale du Bénin?"},                              {"Porto-Novo","Lomé","Lagos","Bamako"},                    {"Porto-Novo"}});
+        AfriqueAnswer.put(5 , new String[][]{{"Quelle est la capitale du Botswana?"},                           {"Gaborone","Harare","Lusaka","Windhoek"},                 {"Gaborone"}});
+        AfriqueAnswer.put(6 , new String[][]{{"Quelle est la capitale du Burkina Faso?"},                       {"Ouagadougou","Lomé","Accra","Yamoussoukro"},             {"Ouagadougou"}});
+        AfriqueAnswer.put(7 , new String[][]{{"Quelle est la capitale du Burundi?"},                            {"Gitega","Lusaka","Kinshasa","Kampala"},                  {"Gitega"}});
+        AfriqueAnswer.put(8 , new String[][]{{"Quelle est la capitale du Cameroun?"},                           {"Yaoundé","Libreville","Abuja","Abidjan"},                {"Yaoundé"}});
+        AfriqueAnswer.put(9 , new String[][]{{"Quelle est la capitale du Cap-Vert?"},                           {"Praia","Dakar","Bissau","Kinshasa"},                     {"Praia"}});
+        AfriqueAnswer.put(10 , new String[][]{{"Quelle est la capitale de la République Centrafricaine?"},      {"Bangui","Djouba","Kampala","Lusaka"},                    {"Bangui"}});
+        AfriqueAnswer.put(11 , new String[][]{{"Quelle est la capitale des Comores?"},                          {"Moroni","Tananarive","Maputo","Nairobi"},                {"Moroni"}});
+        AfriqueAnswer.put(12 , new String[][]{{"Quelle est la capitale de la République du Congo?"},            {"Brazzaville","Kinshasa","Bangui","Nairobi"},             {"Brazzaville"}});
+        AfriqueAnswer.put(13 , new String[][]{{"Quelle est la capitale de la Républiquedémocratique du Congo?"},{"Kinshasa","Moroni","Bangui","Nairobi"},                  {"Kinshasa"}});
+        AfriqueAnswer.put(14 , new String[][]{{"Quelle est la capitale de la Côte d'Ivoire?"},                  {"Abidjan","Yamoussoukro","Accra","Kissidougou"},          {"Yamoussoukro"}});
+        AfriqueAnswer.put(15 , new String[][]{{"Quelle est la capitale de Djibouti?"},                          {"Djibouti","Asmara","Addis-Abeba","Khartoum"},            {"Djibouti"}});
+        AfriqueAnswer.put(16 , new String[][]{{"Quelle est la capitale de l'Egypte?"},                          {"Le Caire","Alexandrie","Khartoum","Tripoli"},            {"N'Djamena"}});
+        AfriqueAnswer.put(17 , new String[][]{{"Quelle est la capitale de l'Erythrée?"},                        {"Asmara","Djibouti","Addis-Abeba","Khartoum"},            {"Asmara"}});
+        AfriqueAnswer.put(18 , new String[][]{{"Quelle est la capitale de l'Eswatini?"},                        {"Mbabane","Maputo","Pretoria","Gaborone"},                {"Mbabane"}});
+        AfriqueAnswer.put(19 , new String[][]{{"Quelle est la capitale de l'Ethiopie?"},                        {"Addis-Abeba","Mogadiscio","Djibouti","Khartoum"},        {"Addis-Abeba"}});
     }
 }

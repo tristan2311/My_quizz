@@ -64,11 +64,11 @@ public class QuestionAnswer {
         AmeriqueAnswer.put(6 , new String[][]{{"Quelle est la capitale du Brésil?"},                    {"Brésilia","Rio de Janeiro","Sao Paulo","Buenos Aires"},  {"Brésilia"}});
         AmeriqueAnswer.put(7 , new String[][]{{"Quelle est la capitale du Chili?"},                     {"Santiago","Arica","Lima","La Paz"},                      {"Santiago"}});
         AmeriqueAnswer.put(8 , new String[][]{{"Quelle est la capitale de la Colombie?"},               {"Medelin","Cali","Bogota","Caracas"},                     {"Bogota"}});
-        AmeriqueAnswer.put(9 , new String[][]{{"Quelle est la capitale du COsta Rica?"},                {"San José","Managua","Panama","Tegucigalpa"},             {"San José"}});
+        AmeriqueAnswer.put(9 , new String[][]{{"Quelle est la capitale du Costa Rica?"},                {"San José","Managua","Panama","Tegucigalpa"},             {"San José"}});
         AmeriqueAnswer.put(10 , new String[][]{{"Quelle est la capitale de la République Dominicaine?"},{"Saint-Domingue","Punta Cana","Port-au_price","Santiago"},{"Saint-Domingue"}});
         AmeriqueAnswer.put(11 , new String[][]{{"Quelle est la capitale de l'Equateur'?"},              {"Quito","Guayaquil","Lima","Caracas"},                    {"Quito"}});
         AmeriqueAnswer.put(12 , new String[][]{{"Quelle est la capitale des Etat-Unis?"},               {"Washigton","New York","Chicago","Los angeles"},          {"Washigton"}});
-        AmeriqueAnswer.put(13 , new String[][]{{"Quelle est la capitale du Guatemala?"},                {"Guatemala","Antigua Guatemala","Mérida","La Havane"},    {"Budapest"}});
+        AmeriqueAnswer.put(13 , new String[][]{{"Quelle est la capitale du Guatemala?"},                {"Guatemala","Antigua Guatemala","Mérida","La Havane"},    {"Guatemala"}});
         AmeriqueAnswer.put(14 , new String[][]{{"Quelle est la capitale de Guyana?"},                   {"Georgetown","Paramaribo","Kourou","Caracas"},            {"Georgetown"}});
         AmeriqueAnswer.put(15 , new String[][]{{"Quelle est la capitale de Haïti?"},                    {"Port-au-Prince","Cap-Haïtien","Carrefour","La Havane"},  {"Port-au-Prince"}});
         AmeriqueAnswer.put(16 , new String[][]{{"Quelle est la capitale du Honduras?"},                 {"Tegucigalpa","San Pedro Sula","Managua","Belmopan"},     {"Tegucigalpa"}});
@@ -79,7 +79,7 @@ public class QuestionAnswer {
         AmeriqueAnswer.put(21 , new String[][]{{"Quelle est la capitale du Paraguay?"},                 {"Asuncion","Montevideo","La Paz","Santiago"},             {"Asuncion"}});
         AmeriqueAnswer.put(22 , new String[][]{{"Quelle est la capitale du Pérou?"},                    {"Lima","Santiago","Quito","La Paz"},                      {"Lima"}});
         AmeriqueAnswer.put(23 , new String[][]{{"Quelle est la capitale du Salvador?"},                 {"San Salvador","San Antonio","San Andreas","Santiago"},   {"San Salvador"}});
-        AmeriqueAnswer.put(24 , new String[][]{{"Quelle est la capitale du Surimane?"},                 {"Paramaribo","Kourou","Quito","Caracas"},                 {"Paramaribo"}});
+        AmeriqueAnswer.put(24 , new String[][]{{"Quelle est la capitale du Suriname?"},                 {"Paramaribo","Kourou","Quito","Caracas"},                 {"Paramaribo"}});
         AmeriqueAnswer.put(25 , new String[][]{{"Quelle est la capitale de l'Uruguay?"},                {"Montevideo","Buenos Aires","Tirana","Santiago"},         {"Montevideo"}});
         AmeriqueAnswer.put(26 , new String[][]{{"Quelle est la capitale du Vénézuéla?"},                {"Caracas","Santiago","Bogota","Curaçao"},                 {"Caracas"}});
     }

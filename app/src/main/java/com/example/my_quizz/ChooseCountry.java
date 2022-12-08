@@ -17,6 +17,7 @@ public class ChooseCountry extends AppCompatActivity implements View.OnClickList
     public static Map<Integer, String[][]> CountryAnswer = new HashMap<Integer, String[][]>();
     ImageButton ButtonAmerique;
     ImageButton ButtonEurope;
+    ImageButton ButtonAfrique;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,8 +26,10 @@ public class ChooseCountry extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.choose_country);
         ButtonEurope = findViewById(R.id.buttonEurope);
         ButtonAmerique = findViewById(R.id.buttonAmerique);
+        ButtonAfrique = findViewById(R.id.buttonAfrique);
         ButtonEurope.setOnClickListener(this);
         ButtonAmerique.setOnClickListener(this);
+        ButtonAfrique.setOnClickListener(this);
 
     }
 
@@ -39,7 +42,11 @@ public class ChooseCountry extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.buttonAmerique:
                 CountryAnswer = QuestionAnswer.AmeriqueAnswer;
-                break;}
+                break;
+            case R.id.buttonAfrique:
+                CountryAnswer = QuestionAnswer.AfriqueAnswer;
+                break;
+        }
         Intent numberQuestionIntent = new Intent(ChooseCountry.this, NumberQuestion.class);
         startActivity(numberQuestionIntent);
     }

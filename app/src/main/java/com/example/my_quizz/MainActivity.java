@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         QuestionAnswer.createEuropeAnswer();
         QuestionAnswer.createAmeriqueAnswer();
+        QuestionAnswer.createAfriqueAnswer();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mNameEditText = findViewById(R.id.main_challenger_name);
@@ -50,18 +51,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(ChooseCountryIntent);
             }
         });
-
-//        TextView test33;
-//        //sharedpreference//
-//        test33 = findViewById(R.id.textView2);
-//        QuestionAnswer.createEuropeAnswer();
-//        String test464 = "";
-//        ThreadLocalRandom aléatoire = ThreadLocalRandom.current();
-//        int randomNumber = 0;
-//            for(int i =0; i<6; i++){
-//                randomNumber = aléatoire.nextInt(0,QuestionAnswer.EuropeAnswer.size()+1);
-//                test464 = test464 + randomNumber + QuestionAnswer.EuropeAnswer.get(randomNumber)[2][0].toString();
-//                    }
-//        test33.setText(String.valueOf(QuestionAnswer.EuropeAnswer.size()));
     }
 }

@@ -84,8 +84,6 @@ public class QuestionAnswer {
         AmeriqueAnswer.put(26 , new String[][]{{"Quelle est la capitale du Vénézuéla?"},                {"Caracas","Santiago","Bogota","Curaçao"},                 {"Caracas"}});
     }
 
-
-
     public static void createAfriqueAnswer(){
         AfriqueAnswer.put(1 , new String[][]{{"Quelle est la capitale de l'Afrique du sud?"},                   {"Johannesburg","Windhoek","Gaborone","Maputo"},           {"Johannesburg"}});
         AfriqueAnswer.put(2 , new String[][]{{"Quelle est la capitale de l'Algérie?"},                          {"Alger","Oran","Tanger","Rabat"},                         {"Alger"}});

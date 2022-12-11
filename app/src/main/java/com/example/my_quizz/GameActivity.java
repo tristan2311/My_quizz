@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView timerdisplay;
-    private long timerleft = 600000;
+    private long timerleft = NumberQuestion.time;
     private TextView totalQuestionsTextView;
     private TextView questionTextView;
     private Button repA,repB,repC,repD;
@@ -90,7 +90,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFinish() {
-
+                finishQuiz();
             }
         }.start();
     }

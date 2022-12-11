@@ -149,13 +149,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     private void parameters(){
-        pause = new AlertDialog.Builder(this)
+        pause = new AlertDialog.Builder(this,R.style.paramDialog)
                 .setTitle("Menu pause")
-                .setMessage("Vous pouvez retouner à l'écran d'accueil ou poursuivre le jeu")
+                .setMessage("                                                                       ")
                 .setPositiveButton("Reprendre", ((dialogInterface, i) -> pause.dismiss()))
                 .setNeutralButton("Quitter", ((dialogInterface, i) -> returnToHome()))
                 .setCancelable(false)
                 .show();
+        pause.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pause_menu));
     }
 
     private void returnToHome() {

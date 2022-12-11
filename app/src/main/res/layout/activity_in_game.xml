@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="@drawable/voyage">
 
     <TextView
         android:id="@+id/total_question"
@@ -25,9 +26,8 @@
         android:layout_marginTop="70dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="100dp"
-        android:background="@color/teal_700"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/in_game_activity_button_1"
         app:layout_constraintEnd_toEndOf="parent"

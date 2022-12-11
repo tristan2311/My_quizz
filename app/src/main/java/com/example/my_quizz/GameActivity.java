@@ -21,11 +21,12 @@ import java.util.Objects;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
+    private AlertDialog pause;
     private TextView timerdisplay;
     private long timerleft = NumberQuestion.time;
     private TextView totalQuestionsTextView;
     private TextView questionTextView;
-    private Button repA,repB,repC,repD;
+    private Button repA,repB,repC,repD,ButtonPause;
     private int score = 0;
     private final Map<Integer, String[][]> CountryAnswer = ChooseCountry.CountryAnswer;
     private final int totalQuestion = CountryAnswer.size();
@@ -43,11 +44,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_in_game);
         totalQuestionsTextView = findViewById(R.id.total_question);
         questionTextView = findViewById(R.id.question);
-
         repA = findViewById((R.id.in_game_activity_button_1));
         repB = findViewById((R.id.in_game_activity_button_2));
         repC = findViewById((R.id.in_game_activity_button_3));
         repD = findViewById((R.id.in_game_activity_button_4));
+        ButtonPause = findViewById((R.id.parameters));
+
+        ButtonPause.setOnClickListener(this);
         repA.setOnClickListener(this);
         repB.setOnClickListener(this);
         repC.setOnClickListener(this);
@@ -69,6 +72,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.in_game_activity_button_4:
                 chooseAnswer(clickedButton);
                 break;
+            case R.id.parameters:
+                parameters();
+                break;
         }
     }
 
@@ -87,7 +93,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 time += secondes;
                 timerdisplay.setText(time);
             }
-
             @Override
             public void onFinish() {
                 finishQuiz();
@@ -116,7 +121,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 choice.setBackgroundColor(Color.parseColor("#FF0000"));
             }
         }
-
         if (selectedAnswer.equals(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[2][0]))
             {score++; }
         currentQuestionIndex++;
@@ -143,6 +147,22 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         repC.setBackgroundColor(Color.parseColor("#8A2BE2"));
         repD.setBackgroundColor(Color.parseColor("#8A2BE2"));
         }
+
+    private void parameters(){
+        pause = new AlertDialog.Builder(this)
+                .setTitle("Menu pause")
+                .setMessage("Vous pouvez retouner à l'écran d'accueil ou poursuivre le jeu")
+                .setPositiveButton("Reprendre", ((dialogInterface, i) -> pause.dismiss()))
+                .setNeutralButton("Quitter", ((dialogInterface, i) -> returnToHome()))
+                .setCancelable(false)
+                .show();
+    }
+
+    private void returnToHome() {
+        Intent MainIntent = new Intent(GameActivity.this, MainActivity.class);
+        startActivity(MainIntent);
+
+    }
 
     private void finishQuiz() {
         String passStatus;

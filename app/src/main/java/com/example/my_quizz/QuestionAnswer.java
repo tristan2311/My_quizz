@@ -102,10 +102,43 @@ public class QuestionAnswer {
         AfriqueAnswer.put(13 , new String[][]{{"Quelle est la capitale de la Républiquedémocratique du Congo?"},{"Kinshasa","Moroni","Bangui","Nairobi"},                  {"Kinshasa"}});
         AfriqueAnswer.put(14 , new String[][]{{"Quelle est la capitale de la Côte d'Ivoire?"},                  {"Abidjan","Yamoussoukro","Accra","Kissidougou"},          {"Yamoussoukro"}});
         AfriqueAnswer.put(15 , new String[][]{{"Quelle est la capitale de Djibouti?"},                          {"Djibouti","Asmara","Addis-Abeba","Khartoum"},            {"Djibouti"}});
-        AfriqueAnswer.put(16 , new String[][]{{"Quelle est la capitale de l'Egypte?"},                          {"Le Caire","Alexandrie","Khartoum","Tripoli"},            {"N'Djamena"}});
+        AfriqueAnswer.put(16 , new String[][]{{"Quelle est la capitale de l'Egypte?"},                          {"Le Caire","Alexandrie","Khartoum","Tripoli"},            {"Le Caire"}});
         AfriqueAnswer.put(17 , new String[][]{{"Quelle est la capitale de l'Erythrée?"},                        {"Asmara","Djibouti","Addis-Abeba","Khartoum"},            {"Asmara"}});
         AfriqueAnswer.put(18 , new String[][]{{"Quelle est la capitale de l'Eswatini?"},                        {"Mbabane","Maputo","Pretoria","Gaborone"},                {"Mbabane"}});
         AfriqueAnswer.put(19 , new String[][]{{"Quelle est la capitale de l'Ethiopie?"},                        {"Addis-Abeba","Mogadiscio","Djibouti","Khartoum"},        {"Addis-Abeba"}});
+        AfriqueAnswer.put(20 , new String[][]{{"Quelle est la capitale du Gabon?"},                             {"Libreville","Luanda","Yaoundé","Sao Tomé"},              {"Libreville"}});
+        AfriqueAnswer.put(21 , new String[][]{{"Quelle est la capitale de la Gambie?"},                         {"Banjul","Dakar","Bissau","Monrovia"},                    {"Banjul"}});
+        AfriqueAnswer.put(22 , new String[][]{{"Quelle est la capitale du Ghana?"},                             {"Accra","Lomé","Dakar","Abuja"},                          {"Accra"}});
+        AfriqueAnswer.put(23 , new String[][]{{"Quelle est la capitale de la Guinée?"},                         {"Kolda","Malabo","Conakry","Bissau"},                     {"Kolda"}});
+        AfriqueAnswer.put(53, new String[][]{{"Quelle est la capitale de la Guinée-Bissau?"},                  {"Bissau","Malabo","Kolda","Conakry"},                     {"Bissau"}});
+        AfriqueAnswer.put(24 , new String[][]{{"Quelle est la capitale de la Guinée-Equatoriale?"},             {"Malabo","Bissau","Kolda","Conakry"},                     {"Malabo"}});
+        AfriqueAnswer.put(25 , new String[][]{{"Quelle est la capitale du Kenya?"},                             {"Nairobi","Kampala","Djouba","Magadiscio"},               {"Nairobi"}});
+        AfriqueAnswer.put(26 , new String[][]{{"Quelle est la capitale du Lesotho?"},                           {"Maseru","Mbabane","Gaborone","Windhoek"},                {"Maseru"}});
+        AfriqueAnswer.put(27 , new String[][]{{"Quelle est la capitale du Libéria"},                            {"Monrovia","Freetown","Yamoussoukro","Bamako"},           {"Monrovia"}});
+        AfriqueAnswer.put(28 , new String[][]{{"Quelle est la capitale de la Libye?"},                          {"Tripoli","Tunis","Beyrouth","Abuja"},                    {"Tripoli"}});
+        AfriqueAnswer.put(29 , new String[][]{{"Quelle est la capitale de Madagascar?"},                        {"Tananarive","Belizz City","San Pedro","Guatemala"},      {"Moroni"}});
+        AfriqueAnswer.put(30 , new String[][]{{"Quelle est la capitale du Malawi?"},                            {"Lilongwe","Bamako","Lusaka","Harare"},                   {"Lilongwe"}});
+        AfriqueAnswer.put(31 , new String[][]{{"Quelle est la capitale du Mali?"},                              {"Bamako","Lilongwe","Dakar","Yamassoukra"},               {"Bamako"}});
+        AfriqueAnswer.put(32 , new String[][]{{"Quelle est la capitale du Maroc?"},                             {"Rabat","Casablanca","Tanger","Alger"},                   {"Rabat"}});
+        AfriqueAnswer.put(33 , new String[][]{{"Quelle est la capitale de l'île Maurice?"},                     {"Port Louis","Saint-Denis","Tananarive","Port-au-Prince"},{"Port Louis"}});
+        AfriqueAnswer.put(34 , new String[][]{{"Quelle est la capitale de la Mauritanie?"},                     {"Nouakchott","Banjul","Bissau","Conakry"},                {"Nouakchott"}});
+        AfriqueAnswer.put(35 , new String[][]{{"Quelle est la capitale du Mozambique?"},                        {"Maputo","Mbabane","Gaborone","Harare"},                  {"Maputo"}});
+        AfriqueAnswer.put(36 , new String[][]{{"Quelle est la capitale de la Namibie?"},                        {"Windhoek","Luanda","Gaborone","Lusaka"},                 {"Windhoek"}});
+        AfriqueAnswer.put(37 , new String[][]{{"Quelle est la capitale du Niger?"},                             {"Niamey","Lagos","Abuja","Bamako"},                       {"Niamey"}});
+        AfriqueAnswer.put(38 , new String[][]{{"Quelle est la capitale du Nigeria?"},                           {"Abuja","Lagos","Niamey","Yaoundé"},                      {"Abuja"}});
+        AfriqueAnswer.put(39 , new String[][]{{"Quelle est la capitale de l'Ouganda?"},                         {"Kampala","Nairobie","Djouba","Harare"},                  {"Kampala"}});
+        AfriqueAnswer.put(40 , new String[][]{{"Quelle est la capitale du Rwanda?"},                            {"Kigali","Bujumbura","Gitega","Kampala"},                 {"Kigali"}});
+        AfriqueAnswer.put(41 , new String[][]{{"Quelle est la capitale du Sénégal?"},                           {"Dakar","Bamako","Yamassouko","Conakry"},                 {"Dakar"}});
+        AfriqueAnswer.put(43 , new String[][]{{"Quelle est la capitale de Sierra Leone?"},                      {"Freetown","Conakry","Monrovia","Yamassouko"},            {"Freetown"}});
+        AfriqueAnswer.put(44 , new String[][]{{"Quelle est la capitale de la Somalie?"},                        {"Mogadiscio","Djibouti","Addis-Abeba","Nairobi"},         {"Mogadiscio"}});
+        AfriqueAnswer.put(45 , new String[][]{{"Quelle est la capitale du Soudan?"},                            {"Khartoum","Asmara","Addis-Abeba","Djouba"},              {"Khartoum"}});
+        AfriqueAnswer.put(46 , new String[][]{{"Quelle est la capitale du Soudan du Sud?"},                     {"Djouba","Khartoum","Asmara","Addis-Abeba"},              {"Djouba"}});
+        AfriqueAnswer.put(47 , new String[][]{{"Quelle est la capitale de la Tanzanie?"},                       {"Dodoma","Lilongwe","Kigali","Gitega"},                   {"Dodoma"}});
+        AfriqueAnswer.put(48 , new String[][]{{"Quelle est la capitale du Tchad?"},                             {"N'Djamena","Niamey","Yaoundé","Bangui"},                 {"N'Djamena"}});
+        AfriqueAnswer.put(49 , new String[][]{{"Quelle est la capitale du Togo?"},                              {"Lomé","Accra","Lagos","Porto-Novo"},                     {"Lomé"}});
+        AfriqueAnswer.put(50 , new String[][]{{"Quelle est la capitale de la Tunisie?"},                        {"Tunis","Alger","Rabat","Tripoli"},                       {"Tunis"}});
+        AfriqueAnswer.put(51 , new String[][]{{"Quelle est la capitale de la Zambie?"},                         {"Lusaka","Harare","Lilongwe","Baborone"},                 {"Lusaka"}});
+        AfriqueAnswer.put(52 , new String[][]{{"Quelle est la capitale du Zimbabwe?"},                          {"Harare","Lusaka","Lilongwe","Maputo"},                   {"Harare"}});
     }
 
     public static void createAllAnswer(){

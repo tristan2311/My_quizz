@@ -6,7 +6,7 @@
 
     <Button
         android:id="@+id/button25Q"
-        android:text="25% des QUESTIONS"
+        android:text="FACILE"
         android:layout_marginTop="90dp"
         android:layout_marginBottom="50dp"
         android:layout_width="230dp"
@@ -17,7 +17,7 @@
 
     <Button
         android:id="@+id/button50Q"
-        android:text="50% des QUESTIONS"
+        android:text="MOYEN"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:layout_width="230dp"
@@ -28,7 +28,7 @@
 
     <Button
         android:id="@+id/button75Q"
-        android:text="75% des QUESTIONS"
+        android:text="DIFFICILE"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:layout_width="230dp"
@@ -41,7 +41,7 @@
         android:id="@+id/buttonAllQ"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="90dp"
-        android:text="TOUTES LES QUESTIONS"
+        android:text="EXPERT"
         android:layout_width="230dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"

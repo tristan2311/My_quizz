@@ -5,59 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <Button-->
-<!--        android:id="@+id/buttonEurope"-->
-<!--        android:layout_width="230dp"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:layout_marginTop="240dp"-->
-<!--        android:text="PAYS D'EUROPE"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonAmerique"-->
-<!--        android:layout_width="230dp"-->
-<!--        android:layout_height="100dp"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_marginBottom="240dp"-->
-<!--        android:text="PAYS D'AMERIQUE"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/buttonEurope"/>-->
-
-    <ImageButton
-        android:id="@+id/buttonEurope"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/europe"
-        android:layout_marginTop="-10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textViewEurope"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
+        android:background="@drawable/europev2"
+        android:text="EUROPE"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/buttonAmerique"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/amerique"
-        android:layout_marginBottom="-10dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="412dp"
+    <TextView
+        android:id="@+id/textViewAmerique"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
+        android:background="@drawable/ameriquev2"
+        android:text="AMERIQUE"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/buttonAfrique"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textViewAfrique"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
+        android:background="@drawable/afrique"
+        android:text="AFRIQUE"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewAll"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
+        android:background="@drawable/toutcontinent"
+        android:text="TOUS"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonEurope"
+        android:alpha="0"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonAmerique"
+        android:alpha="0"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonAfrique"
+        android:alpha="0"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonAll"
+        android:alpha="0"
+        android:layout_width="205dp"
+        android:layout_height="365dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

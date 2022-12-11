@@ -130,7 +130,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("SetTextI18n")
     private void loadNewQuestion() {
         totalQuestionsTextView.setText("Questions restantes: "+ (numberQuestion - currentQuestionIndex));
-        if(currentQuestionIndex == numberQuestion){
+        if(currentQuestionIndex >= numberQuestion){
             finishQuiz();
             return;
         }
@@ -168,9 +168,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private void finishQuiz() {
         String passStatus;
         if (score > numberQuestion*0.60) {
-            passStatus = "Passed";
+            passStatus = "REUSSI";
         }else{
-            passStatus = "Failed";
+            passStatus = "RATE";
         }
 
         new AlertDialog.Builder(this)

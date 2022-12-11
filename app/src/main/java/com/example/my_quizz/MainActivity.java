@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         QuestionAnswer.createEuropeAnswer();
         QuestionAnswer.createAmeriqueAnswer();
         QuestionAnswer.createAfriqueAnswer();
+        QuestionAnswer.createAllAnswer();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mNameEditText = findViewById(R.id.main_challenger_name);

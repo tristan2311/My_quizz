@@ -1,5 +1,7 @@
 package com.example.my_quizz;
 
+import android.widget.Button;
+
 import java.util.Map;
 import java.util.HashMap;
 
@@ -8,11 +10,12 @@ public class QuestionAnswer {
     public static Map<Integer, String[][]> EuropeAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AmeriqueAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AfriqueAnswer = new HashMap<Integer, String[][]>();
+    public static Map<Integer, String[][]> AllAnswer = new HashMap<Integer, String[][]>();
 
     public static void createEuropeAnswer(){
         EuropeAnswer.put(1 , new String[][]{{"Quelle est la capitale de la France?"},              {"Berlin","Paris","Madrid","Londres"},            {"Paris"}});
         EuropeAnswer.put(2 , new String[][]{{"Quelle est la capitale de l'Espagne?"},              {"Barcelone","Paris","Madrid","Lisbonne"},        {"Madrid"}});
-        EuropeAnswer.put(3 , new String[][]{{"Quelle est la capitale de la Belgique?"},            {"Belgrade","Bruxelles","Bruges","Amsterdam"},    {"Bruxelles"}});
+        EuropeAnswer.put(3 , new String[][]{{"Quelle est la capitale de la Belgique?(le Seum au foot)"},            {"Belgrade","Bruxelles","Bruges","Amsterdam"},    {"Bruxelles"}});
         EuropeAnswer.put(4 , new String[][]{{"Quelle est la capitale de l'Allemagne?"},            {"Berlin","Munich","Prague","Dublin"},            {"Berlin"}});
         EuropeAnswer.put(5 , new String[][]{{"Quelle est la capitale de la Suisse?"},              {"Berne","Bale","Zurich","Genève"},               {"Berne"}});
         EuropeAnswer.put(6 , new String[][]{{"Quelle est la capitale de la l'Italie?"},            {"Rome","Madrid","Milan","Monaco"},               {"Rome"}});
@@ -103,5 +106,18 @@ public class QuestionAnswer {
         AfriqueAnswer.put(17 , new String[][]{{"Quelle est la capitale de l'Erythrée?"},                        {"Asmara","Djibouti","Addis-Abeba","Khartoum"},            {"Asmara"}});
         AfriqueAnswer.put(18 , new String[][]{{"Quelle est la capitale de l'Eswatini?"},                        {"Mbabane","Maputo","Pretoria","Gaborone"},                {"Mbabane"}});
         AfriqueAnswer.put(19 , new String[][]{{"Quelle est la capitale de l'Ethiopie?"},                        {"Addis-Abeba","Mogadiscio","Djibouti","Khartoum"},        {"Addis-Abeba"}});
+    }
+
+    public static void createAllAnswer(){
+        AllAnswer.putAll(EuropeAnswer);
+        int i = AllAnswer.size()+1;
+        for (String[][] Answer : AmeriqueAnswer.values()){
+            AllAnswer.put(i,Answer);
+            i += 1;
+        }
+        for (String[][] Answer2 : AfriqueAnswer.values()){
+            AllAnswer.put(i,Answer2);
+            i += 1;
+        }
     }
 }

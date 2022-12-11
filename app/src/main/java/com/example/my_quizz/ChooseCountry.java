@@ -15,9 +15,9 @@ import java.util.Map;
 public class ChooseCountry extends AppCompatActivity implements View.OnClickListener{
 
     public static Map<Integer, String[][]> CountryAnswer = new HashMap<Integer, String[][]>();
-    ImageButton ButtonAmerique;
-    ImageButton ButtonEurope;
-    ImageButton ButtonAfrique;
+    private ImageButton ButtonAmerique;
+    private ImageButton ButtonEurope;
+    private ImageButton ButtonAfrique;
 
     @SuppressLint("MissingInflatedId")
     @Override

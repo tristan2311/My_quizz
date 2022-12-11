@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class NumberQuestion extends AppCompatActivity implements View.OnClickListener{
 
     public static int maxQuestion = 0;
-    Button Button5Q;
-    Button Button10Q;
-    Button Button20Q;
-    Button ButtonAllQ;
+    private Button Button5Q;
+    private Button Button10Q;
+    private Button Button20Q;
+    private Button ButtonAllQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

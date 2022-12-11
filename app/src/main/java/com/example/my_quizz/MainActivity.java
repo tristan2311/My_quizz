@@ -15,8 +15,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText mNameEditText;
-    Button mStartButton;
+    public static String name;
+    private EditText mNameEditText;
+    private Button mStartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {        // The user just clicked
+                name = mNameEditText.getText().toString();
                 Intent ChooseCountryIntent = new Intent(MainActivity.this, ChooseCountry.class);
                 startActivity(ChooseCountryIntent);
             }

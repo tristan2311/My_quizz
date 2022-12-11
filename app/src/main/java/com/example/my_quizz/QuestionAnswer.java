@@ -9,7 +9,6 @@ public class QuestionAnswer {
     public static Map<Integer, String[][]> AmeriqueAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AfriqueAnswer = new HashMap<Integer, String[][]>();
 
-
     public static void createEuropeAnswer(){
         EuropeAnswer.put(1 , new String[][]{{"Quelle est la capitale de la France?"},              {"Berlin","Paris","Madrid","Londres"},            {"Paris"}});
         EuropeAnswer.put(2 , new String[][]{{"Quelle est la capitale de l'Espagne?"},              {"Barcelone","Paris","Madrid","Lisbonne"},        {"Madrid"}});

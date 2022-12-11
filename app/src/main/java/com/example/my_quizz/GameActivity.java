@@ -7,51 +7,34 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
-    TextView totalQuestionsTextView;
-    TextView questionTextView;
-    Button repA,repB,repC,repD;
-
-    String Answer;
-    String Message;
-    int score = 0;
-    Map<Integer, String[][]> CountryAnswer = ChooseCountry.CountryAnswer;
-    int totalQuestion = CountryAnswer.size();
-    int numberQuestion = NumberQuestion.maxQuestion;
-    int currentQuestionIndex = 0;
-    String selectedAnswer="";
-    ArrayList<Integer> randomNumberIndexList = new ArrayList<Integer>();
+    private TextView timerdisplay;
+    private long timerleft = 600000;
+    private TextView totalQuestionsTextView;
+    private TextView questionTextView;
+    private Button repA,repB,repC,repD;
+    private int score = 0;
+    private final Map<Integer, String[][]> CountryAnswer = ChooseCountry.CountryAnswer;
+    private final int totalQuestion = CountryAnswer.size();
+    private final int numberQuestion = NumberQuestion.maxQuestion;
+    private int currentQuestionIndex = 0;
+    private String selectedAnswer="";
+    private final ArrayList<Integer> randomNumberIndexList = new ArrayList<>();
     {for (int i=1; i<totalQuestion+1; i++) randomNumberIndexList.add(i);
         Collections.shuffle(randomNumberIndexList);}
-
-    public void chooseAnswer(Button clickedButton) {
-        if (selectedAnswer.equals(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0].toString())) {
-            clickedButton.setBackgroundColor(Color.parseColor("#90EE90"));
-            Answer = "Right";
-            Message = "Tu as trouvé la bonne capitale !";
-            score++;
-        } else {
-            clickedButton.setBackgroundColor(Color.parseColor("#FF0000"));
-            Answer = "Wrong";
-            Message = "Et non la bonne capital est " + String.valueOf(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0]);
-        }
-        currentQuestionIndex++;
-        new AlertDialog.Builder(this)
-                .setTitle(Answer)
-                .setMessage(Message)
-                .setPositiveButton("Continue", ((dialogInterface, i) -> loadNewQuestion()))
-                .setCancelable(false)
-                .show();
-        }
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -65,14 +48,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         repB = findViewById((R.id.in_game_activity_button_2));
         repC = findViewById((R.id.in_game_activity_button_3));
         repD = findViewById((R.id.in_game_activity_button_4));
-
         repA.setOnClickListener(this);
         repB.setOnClickListener(this);
         repC.setOnClickListener(this);
         repD.setOnClickListener(this);
 
+        timerdisplay = findViewById(R.id.timer);
+        timer();
         loadNewQuestion();
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         Button clickedButton = (Button) view;
@@ -87,20 +72,72 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public void timer(){
+        CountDownTimer countDownTimer = new CountDownTimer(timerleft, 1000) {
+            @Override
+            public void onTick(long l) {
+                timerleft = l;
+                int minutes = (int) timerleft / 60000;
+                int secondes = (int) timerleft % 60000 / 1000;
+                String time;
+                time = minutes + ":";
+                if (secondes < 10) {
+                    time += "0";
+                }
+                time += secondes;
+                timerdisplay.setText(time);
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+    }
+
+    public void delay(){
+        CountDownTimer TimerBetweenQestion = new CountDownTimer(1000, 1000) {
+            @Override
+            public void onTick(long l) {}
+
+            @Override
+            public void onFinish() {
+                loadNewQuestion();
+            }
+        }.start();
+    }
+
+    public void chooseAnswer(Button clickedButton) {
+        List<Button> rep = Arrays.asList(repA, repB, repC, repD);
+        for (Button choice : rep) {
+            if (choice.getText().toString() == CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[2][0]) {
+                choice.setBackgroundColor(Color.parseColor("#90EE90"));
+            } else {
+                choice.setBackgroundColor(Color.parseColor("#FF0000"));
+            }
+        }
+
+        if (selectedAnswer.equals(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[2][0]))
+            {score++; }
+        currentQuestionIndex++;
+        delay();
+    }
+
+    @SuppressLint("SetTextI18n")
     private void loadNewQuestion() {
-        totalQuestionsTextView.setText("Questions restantes: "+ String.valueOf(numberQuestion-currentQuestionIndex));
+        totalQuestionsTextView.setText("Questions restantes: "+ (numberQuestion - currentQuestionIndex));
         if(currentQuestionIndex == numberQuestion){
             finishQuiz();
             return;
         }
-        ArrayList<Integer> randomNumber = new ArrayList<Integer>();
+        ArrayList<Integer> randomNumber = new ArrayList<>();
         for (int i=0; i<4; i++) randomNumber.add(i);
         Collections.shuffle(randomNumber);
-        questionTextView.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[0][0].toString());
-        repA.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(0)].toString());
-        repB.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(1)].toString());
-        repC.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(2)].toString());
-        repD.setText(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex))[1][randomNumber.get(3)].toString());
+        questionTextView.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[0][0]);
+        repA.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(0)]);
+        repB.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(1)]);
+        repC.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(2)]);
+        repD.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(3)]);
         repA.setBackgroundColor(Color.parseColor("#8A2BE2"));
         repB.setBackgroundColor(Color.parseColor("#8A2BE2"));
         repC.setBackgroundColor(Color.parseColor("#8A2BE2"));
@@ -108,7 +145,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     private void finishQuiz() {
-        String passStatus = "";
+        String passStatus;
         if (score > numberQuestion*0.60) {
             passStatus = "Passed";
         }else{
@@ -117,7 +154,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score "+score+" sur "+String.valueOf(numberQuestion))
+                .setMessage(MainActivity.name + " ton score est de "+score+" sur "+ numberQuestion)
                 .setPositiveButton("Recommencer",((dialogInterface, i) -> restartQuiz()))
                 .setCancelable(false)
                 .show();

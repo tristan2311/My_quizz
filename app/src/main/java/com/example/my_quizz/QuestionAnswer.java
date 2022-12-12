@@ -142,8 +142,9 @@ public class QuestionAnswer {
     }
 
     public static void createAllAnswer(){
+        int i = 0;
         AllAnswer.putAll(EuropeAnswer);
-        int i = AllAnswer.size()+1;
+        i = EuropeAnswer.size()+1;
         for (String[][] Answer : AmeriqueAnswer.values()){
             AllAnswer.put(i,Answer);
             i += 1;

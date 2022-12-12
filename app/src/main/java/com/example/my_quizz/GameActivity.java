@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.util.Objects;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
+    private AlertDialog endGame;
     private AlertDialog pause;
     private TextView timerdisplay;
     private long timerleft = NumberQuestion.time;
@@ -37,7 +39,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     {for (int i=1; i<totalQuestion+1; i++) randomNumberIndexList.add(i);
         Collections.shuffle(randomNumberIndexList);}
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,10 +143,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         repB.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(1)]);
         repC.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(2)]);
         repD.setText(Objects.requireNonNull(CountryAnswer.get(randomNumberIndexList.get(currentQuestionIndex)))[1][randomNumber.get(3)]);
-        repA.setBackgroundColor(Color.parseColor("#8A2BE2"));
-        repB.setBackgroundColor(Color.parseColor("#8A2BE2"));
-        repC.setBackgroundColor(Color.parseColor("#8A2BE2"));
-        repD.setBackgroundColor(Color.parseColor("#8A2BE2"));
+        repA.setBackgroundColor(Color.parseColor("#598A2BE2"));
+        repB.setBackgroundColor(Color.parseColor("#598A2BE2"));
+        repC.setBackgroundColor(Color.parseColor("#598A2BE2"));
+        repD.setBackgroundColor(Color.parseColor("#598A2BE2"));
         }
 
     private void parameters(){
@@ -173,12 +174,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             passStatus = "RATE";
         }
 
-        new AlertDialog.Builder(this)
+        endGame = new AlertDialog.Builder(this,R.style.paramDialog)
                 .setTitle(passStatus)
                 .setMessage(MainActivity.name + " ton score est de "+score+" sur "+ numberQuestion)
                 .setPositiveButton("Recommencer",((dialogInterface, i) -> restartQuiz()))
                 .setCancelable(false)
                 .show();
+        endGame.getWindow().setBackgroundDrawable(getDrawable(R.drawable.endgame));
 
     }
 

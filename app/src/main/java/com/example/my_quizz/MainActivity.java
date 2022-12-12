@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {        // The user just clicked
                 name = mNameEditText.getText().toString();
-                Intent ChooseCountryIntent = new Intent(MainActivity.this, ChooseCountry.class);
+                Intent ChooseCountryIntent = new Intent(MainActivity.this, Music.class);
                 startActivity(ChooseCountryIntent);
             }
         });

@@ -67,11 +67,11 @@
 
     <Button
         android:id="@+id/buttonAmerique"
-        android:alpha="0"
         android:layout_width="205dp"
         android:layout_height="365dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonAfrique"

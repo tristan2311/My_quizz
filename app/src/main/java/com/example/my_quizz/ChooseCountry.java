@@ -2,10 +2,11 @@ package com.example.my_quizz;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,12 @@ public class ChooseCountry extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_country);
+        Music.createMediaPlayer("http://docs.google.com/uc?export=open&id=13fTNUaMd7FhYJxh8eZPdW06OdIgSb_xu");
+        if(MainActivity.stateButton == 0)
+            Music.musicValue=1;
+        else if (MainActivity.stateButton == 1)
+            Music.musicValue=0;
+        Music.playSound();
         ButtonEurope = findViewById(R.id.buttonEurope);
         ButtonAmerique = findViewById(R.id.buttonAmerique);
         ButtonAfrique = findViewById(R.id.buttonAfrique);
@@ -52,6 +59,8 @@ public class ChooseCountry extends AppCompatActivity implements View.OnClickList
                 CountryAnswer = QuestionAnswer.AllAnswer;
                 break;
         }
+        Music.musicValue=1;
+        Music.playSound();
         Intent numberQuestionIntent = new Intent(ChooseCountry.this, NumberQuestion.class);
         startActivity(numberQuestionIntent);
     }

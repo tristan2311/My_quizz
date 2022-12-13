@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,17 +23,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mStartButton;
     private Button musicButton;
     private ImageView musicView;
+    private MediaPlayer musicplayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Music.createMediaPlayer("http://docs.google.com/uc?export=open&id=1MEoxdE7tf_RDUcRNZnpViQ2-eaIatfeB");
+        String url = "http://docs.google.com/uc?export=open&id=1MEoxdE7tf_RDUcRNZnpViQ2-eaIatfeB";
+        this.musicplayer = new MediaPlayer();
+        try {
+            musicplayer.setDataSource(url);
+            musicplayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if(MainActivity.stateButton == 0)
             Music.musicValue=1;
         else if (MainActivity.stateButton == 1)
             Music.musicValue=0;
-        Music.playSound();
+        Music.playSound(musicplayer);
         stateButton = Music.musicValue;
         QuestionAnswer.createEuropeAnswer();
         QuestionAnswer.createAmeriqueAnswer();
@@ -43,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStartButton.setEnabled(false); //permet de désactiver le bouton
         musicButton.setOnClickListener(this);
         mStartButton.setOnClickListener(this);
+
 
         mNameEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -69,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent ChooseCountryIntent = new Intent(MainActivity.this, ChooseCountry.class);
                 startActivity(ChooseCountryIntent);
                 Music.musicValue = 1;
-                Music.playSound();
+                Music.playSound(musicplayer);
             }
             break;
 
@@ -79,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else if (Music.musicValue == 0){
                     musicView.setBackgroundColor(Color.parseColor("#3390EE90"));}
-                Music.playSound();
+                Music.playSound(musicplayer);
                 stateButton = Music.musicValue;
                 break;
         }

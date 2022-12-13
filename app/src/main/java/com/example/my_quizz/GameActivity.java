@@ -7,12 +7,14 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,6 +24,7 @@ import java.util.Objects;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener{
+    private MediaPlayer musicplayer;
     private AlertDialog endGame;
     private AlertDialog pause;
     private TextView timerdisplay;
@@ -43,12 +46,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_game);
-        Music.createMediaPlayer(NumberQuestion.urlMusique);
+        String url = NumberQuestion.urlMusique;
+        this.musicplayer = new MediaPlayer();
+        try {
+            musicplayer.setDataSource(url);
+            musicplayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if(MainActivity.stateButton == 0)
             Music.musicValue=1;
         else if (MainActivity.stateButton == 1)
             Music.musicValue=0;
-        Music.playSound();
+        Music.playSound(musicplayer);
         totalQuestionsTextView = findViewById(R.id.total_question);
         questionTextView = findViewById(R.id.question);
         repA = findViewById((R.id.in_game_activity_button_1));
@@ -160,16 +170,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 .setTitle("Menu pause")
                 .setMessage("                                                                       ")
                 .setPositiveButton("Reprendre", ((dialogInterface, i) -> pause.dismiss()))
-                .setNegativeButton("Musique", ((dialogInterface, i) -> {Music.playSound();MainActivity.stateButton = Music.musicValue;}))
-                .setNeutralButton("Quitter", ((dialogInterface, i) -> {returnToHome();
-                    Music.musicValue = 1;
-                    Music.playSound();}))
+                .setNegativeButton("Musique", ((dialogInterface, i) -> {Music.playSound(musicplayer);MainActivity.stateButton = Music.musicValue;}))
+                .setNeutralButton("Quitter", ((dialogInterface, i) -> {returnToHome();}))
                 .setCancelable(false)
                 .show();
         pause.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pause_menu));
     }
 
     private void returnToHome() {
+        Music.musicValue = 1;
+        Music.playSound(musicplayer);
         Intent MainIntent = new Intent(GameActivity.this, MainActivity.class);
         startActivity(MainIntent);
 
@@ -195,7 +205,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     private void restartQuiz() {
         Music.musicValue=1;
-        Music.playSound();
+        Music.playSound(musicplayer);
         Intent ChooseCountryIntent = new Intent(GameActivity.this, ChooseCountry.class);
         startActivity(ChooseCountryIntent);
 

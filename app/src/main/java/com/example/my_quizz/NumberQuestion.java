@@ -1,11 +1,14 @@
 package com.example.my_quizz;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.IOException;
 
 public class NumberQuestion extends AppCompatActivity implements View.OnClickListener{
 
@@ -16,17 +19,25 @@ public class NumberQuestion extends AppCompatActivity implements View.OnClickLis
     private Button Button50Q;
     private Button Button75Q;
     private Button ButtonAllQ;
+    private MediaPlayer musicplayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_question);
-        Music.createMediaPlayer("http://docs.google.com/uc?export=open&id=1jbOLx63r3qgWcRM-pITJXmBfY19a_4yy");
+        String url = "http://docs.google.com/uc?export=open&id=1jbOLx63r3qgWcRM-pITJXmBfY19a_4yy";
+        this.musicplayer = new MediaPlayer();
+        try {
+            musicplayer.setDataSource(url);
+            musicplayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if(MainActivity.stateButton == 0)
             Music.musicValue=1;
         else if (MainActivity.stateButton == 1)
             Music.musicValue=0;
-        Music.playSound();
+        Music.playSound(musicplayer);
         Button25Q = findViewById(R.id.button25Q);
         Button50Q = findViewById(R.id.button50Q);
         Button75Q = findViewById(R.id.button75Q);
@@ -60,7 +71,7 @@ public class NumberQuestion extends AppCompatActivity implements View.OnClickLis
                 break;}
         time = maxQuestion * 5000;
         Music.musicValue=1;
-        Music.playSound();
+        Music.playSound(musicplayer);
         Intent gameActivityIntent = new Intent(NumberQuestion.this, GameActivity.class);
         startActivity(gameActivityIntent);
     }

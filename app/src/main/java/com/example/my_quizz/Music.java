@@ -9,19 +9,9 @@ import java.io.IOException;
 
 public class Music {
 
-    private static MediaPlayer musicplayer;
     public static int musicValue = 0;
 
-    public static void createMediaPlayer(String url) {
-    musicplayer =new MediaPlayer();
-    try
-    {   musicplayer.setDataSource(url);
-        musicplayer.prepare();
-    } catch( IOException e)
-        { e.printStackTrace(); }
-}
-
-    public static void playSound() {
+    public static void playSound(MediaPlayer musicplayer) {
         if(musicValue == 1)
         {   musicplayer.pause();
             musicValue = 0; }

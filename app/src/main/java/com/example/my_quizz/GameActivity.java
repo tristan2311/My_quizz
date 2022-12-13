@@ -43,6 +43,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_game);
+        Music.createMediaPlayer(NumberQuestion.urlMusique);
+        if(MainActivity.stateButton == 0)
+            Music.musicValue=1;
+        else if (MainActivity.stateButton == 1)
+            Music.musicValue=0;
+        Music.playSound();
         totalQuestionsTextView = findViewById(R.id.total_question);
         questionTextView = findViewById(R.id.question);
         repA = findViewById((R.id.in_game_activity_button_1));
@@ -154,7 +160,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 .setTitle("Menu pause")
                 .setMessage("                                                                       ")
                 .setPositiveButton("Reprendre", ((dialogInterface, i) -> pause.dismiss()))
-                .setNeutralButton("Quitter", ((dialogInterface, i) -> returnToHome()))
+                .setNegativeButton("Musique", ((dialogInterface, i) -> {Music.playSound();MainActivity.stateButton = Music.musicValue;}))
+                .setNeutralButton("Quitter", ((dialogInterface, i) -> {returnToHome();
+                    Music.musicValue = 1;
+                    Music.playSound();}))
                 .setCancelable(false)
                 .show();
         pause.getWindow().setBackgroundDrawable(getDrawable(R.drawable.pause_menu));
@@ -185,6 +194,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void restartQuiz() {
+        Music.musicValue=1;
+        Music.playSound();
         Intent ChooseCountryIntent = new Intent(GameActivity.this, ChooseCountry.class);
         startActivity(ChooseCountryIntent);
 

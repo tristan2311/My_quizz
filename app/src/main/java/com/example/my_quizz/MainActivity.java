@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         Music.createMediaPlayer("http://docs.google.com/uc?export=open&id=1MEoxdE7tf_RDUcRNZnpViQ2-eaIatfeB");
         if(MainActivity.stateButton == 0)
             Music.musicValue=1;
@@ -34,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         QuestionAnswer.createAmeriqueAnswer();
         QuestionAnswer.createAfriqueAnswer();
         QuestionAnswer.createAllAnswer();
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         mNameEditText = findViewById(R.id.main_challenger_name);
         mStartButton = findViewById(R.id.main_start_button);
         musicButton = findViewById(R.id.music_button);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-        public void onClick(View view) {        // The user just clicked
+    public void onClick(View view) {        // The user just clicked
         Button clickedButton = (Button) view;
         switch (clickedButton.getId()) {
             case R.id.main_start_button: {

@@ -44,19 +44,19 @@ public class NumberQuestion extends AppCompatActivity implements View.OnClickLis
         switch(clickedButton.getId()) {
             case R.id.button25Q:
                 maxQuestion = ChooseCountry.CountryAnswer.size()/4;
-                urlMusique = "";
+                urlMusique = "http://docs.google.com/uc?export=open&id=1mXtW6KsFwKrP_n40Jcibi6p2aIsFdwbO";
                 break;
             case R.id.button50Q:
                 maxQuestion = ChooseCountry.CountryAnswer.size()/2;
-                urlMusique = "";
+                urlMusique = "http://docs.google.com/uc?export=open&id=1MgY17JQiy041a1K8PUmva7A1JXmsz5pt";
                 break;
             case R.id.button75Q:
                 maxQuestion = (ChooseCountry.CountryAnswer.size()/4)*3;
-                urlMusique = "";
+                urlMusique = "http://docs.google.com/uc?export=open&id=1FfDXKmGLoNoD7ZGKcujD8yyKzQx_HaL3";
                 break;
             case R.id.buttonAllQ:
                 maxQuestion = ChooseCountry.CountryAnswer.size();
-                urlMusique = "";
+                urlMusique = "http://docs.google.com/uc?export=open&id=11OpkstQVs4alOVWMfir4haCnL-yOz2_7";
                 break;}
         time = maxQuestion * 5000;
         Music.musicValue=1;

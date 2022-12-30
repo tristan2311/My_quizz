@@ -7,11 +7,14 @@ import java.util.HashMap;
 
 public class QuestionAnswer {
 
+    //Création des Hashmap qui stocke comme valeur les questions et les réponses et la bonne réponse et la clé est un entier
+    //ce qui permet d'accéder au questions et réponses juste grâce à un entier
     public static Map<Integer, String[][]> EuropeAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AmeriqueAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AfriqueAnswer = new HashMap<Integer, String[][]>();
     public static Map<Integer, String[][]> AllAnswer = new HashMap<Integer, String[][]>();
 
+    //Pays d'Europe
     public static void createEuropeAnswer(){
         EuropeAnswer.put(1 , new String[][]{{"Quelle est la capitale de la France?"},              {"Berlin","Paris","Madrid","Londres"},            {"Paris"}});
         EuropeAnswer.put(2 , new String[][]{{"Quelle est la capitale de l'Espagne?"},              {"Barcelone","Paris","Madrid","Lisbonne"},        {"Madrid"}});
@@ -57,6 +60,7 @@ public class QuestionAnswer {
         EuropeAnswer.put(42 , new String[][]{{"Quelle est la capitale de la Croatie"},             {"Bratislava","Tirana","Belgrade","Zagreb"},      {"Zagreb"}});
     }
 
+    //Pays d'Amérique
     public static void createAmeriqueAnswer(){
         AmeriqueAnswer.put(1 , new String[][]{{"Quelle est la capitale de l'Argentine?"},               {"Buenos Aires","Córdoba","Santiago","Rosario"},         {"Buenos Aires"}});
         AmeriqueAnswer.put(2 , new String[][]{{"Quelle est la capitale des îles Bahamas?"},             {"Nassau","Freeport","La Havane","Miami"},                 {"Nassau"}});
@@ -86,6 +90,7 @@ public class QuestionAnswer {
         AmeriqueAnswer.put(26 , new String[][]{{"Quelle est la capitale du Vénézuéla?"},                {"Caracas","Santiago","Bogota","Curaçao"},                 {"Caracas"}});
     }
 
+    //Pays d'Afrique
     public static void createAfriqueAnswer(){
         AfriqueAnswer.put(1 , new String[][]{{"Quelle est la capitale de l'Afrique du sud?"},                   {"Johannesburg","Windhoek","Gaborone","Maputo"},           {"Johannesburg"}});
         AfriqueAnswer.put(2 , new String[][]{{"Quelle est la capitale de l'Algérie?"},                          {"Alger","Oran","Tanger","Rabat"},                         {"Alger"}});
@@ -141,6 +146,7 @@ public class QuestionAnswer {
         AfriqueAnswer.put(52 , new String[][]{{"Quelle est la capitale du Zimbabwe?"},                          {"Harare","Lusaka","Lilongwe","Maputo"},                   {"Harare"}});
     }
 
+    //Création d'une Hashmap contenant les trois Hashmap précédente mais en modifiant les clé pour ne pas avoir de doublons
     public static void createAllAnswer(){
         int i = 0;
         AllAnswer.putAll(EuropeAnswer);
@@ -153,5 +159,13 @@ public class QuestionAnswer {
             AllAnswer.put(i,Answer2);
             i += 1;
         }
+    }
+
+    //Permet d'executer les 4 fonctions précédente (cette fonction est appelé dans MainActivity
+    public static void createHashmap(){
+        createEuropeAnswer();
+        createAmeriqueAnswer();
+        createAfriqueAnswer();
+        createAllAnswer();
     }
 }

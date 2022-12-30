@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/textViewEurope"
-        android:layout_width="205dp"
-        android:layout_height="365dp"
+        android:layout_width="@dimen/buttonCountryLongeur"
+        android:layout_height="@dimen/buttonCountryLargeur"
         android:background="@drawable/europev2"
         android:text="EUROPE"
         android:gravity="center"
@@ -20,8 +20,8 @@
 
     <TextView
         android:id="@+id/textViewAmerique"
-        android:layout_width="205dp"
-        android:layout_height="365dp"
+        android:layout_width="@dimen/buttonCountryLongeur"
+        android:layout_height="@dimen/buttonCountryLargeur"
         android:background="@drawable/ameriquev2"
         android:text="AMERIQUE"
         android:gravity="center"
@@ -46,8 +46,8 @@
 
     <TextView
         android:id="@+id/textViewAll"
-        android:layout_width="205dp"
-        android:layout_height="365dp"
+        android:layout_width="@dimen/buttonCountryLongeur"
+        android:layout_height="@dimen/buttonCountryLargeur"
         android:background="@drawable/toutcontinent"
         android:text="TOUS"
         android:gravity="center"
@@ -60,8 +60,8 @@
     <Button
         android:id="@+id/buttonEurope"
         android:alpha="0"
-        android:layout_width="205dp"
-        android:layout_height="365dp"
+        android:layout_width="@dimen/buttonCountryLongeur"
+        android:layout_height="@dimen/buttonCountryLargeur"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

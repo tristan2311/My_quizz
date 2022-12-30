@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static String name;
+    public static String name; //Nom du joueur
     public static int stateButton = 1;
     private EditText mNameEditText;
     private Button mStartButton;
@@ -29,24 +29,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String url = "http://docs.google.com/uc?export=open&id=1MEoxdE7tf_RDUcRNZnpViQ2-eaIatfeB";
+        String url = "http://docs.google.com/uc?export=open&id=1MEoxdE7tf_RDUcRNZnpViQ2-eaIatfeB"; //Url pour accéder à la musique
         this.musicplayer = new MediaPlayer();
+        // try catch pour gérer le cas ou on ne peut pas charger la musique
         try {
             musicplayer.setDataSource(url);
             musicplayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        // Permet de gérer l'activation ou la coupure de la musique en fonction de la valeur d'une variable qui correspond à son état
         if(MainActivity.stateButton == 0)
             Music.musicValue=1;
         else if (MainActivity.stateButton == 1)
             Music.musicValue=0;
         Music.playSound(musicplayer);
         stateButton = Music.musicValue;
-        QuestionAnswer.createEuropeAnswer();
-        QuestionAnswer.createAmeriqueAnswer();
-        QuestionAnswer.createAfriqueAnswer();
-        QuestionAnswer.createAllAnswer();
+        QuestionAnswer.createHashmap(); //Lance la fonction qui permet de créer les différentes Hashmap
         mNameEditText = findViewById(R.id.main_challenger_name);
         mStartButton = findViewById(R.id.main_start_button);
         musicButton = findViewById(R.id.music_button);
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStartButton.setOnClickListener(this);
 
 
+        //Permet de choisir la reaction de l'EditText en fonction du moment ou le texte est saisi ou non par le joueur
         mNameEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charsequence, int start, int count, int after) {
@@ -73,12 +73,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View view) {        // The user just clicked
+    public void onClick(View view) {        // Le joueur a cliqué
         Button clickedButton = (Button) view;
         switch (clickedButton.getId()) {
             case R.id.main_start_button: {
                 name = mNameEditText.getText().toString();
-                Intent ChooseCountryIntent = new Intent(MainActivity.this, ChooseCountry.class);
+                Intent ChooseCountryIntent = new Intent(MainActivity.this, ChooseCountry.class); //Accède à la classe ChooseCountry
                 startActivity(ChooseCountryIntent);
                 Music.musicValue = 1;
                 Music.playSound(musicplayer);
@@ -87,9 +87,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.music_button:
                 if (Music.musicValue == 1){
+                    //Change la couleur du bouton pour indiquer que la musique est coupé
                     musicView.setBackgroundColor(Color.parseColor("#33FF0000"));
                 }
                 else if (Music.musicValue == 0){
+                    //Change la couleur du bouton pour indiquer que la musique n'est pas coupé
                     musicView.setBackgroundColor(Color.parseColor("#3390EE90"));}
                 Music.playSound(musicplayer);
                 stateButton = Music.musicValue;
